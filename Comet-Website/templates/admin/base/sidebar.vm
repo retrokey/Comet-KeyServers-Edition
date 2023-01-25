@@ -1,0 +1,34 @@
+<div class="col-sm-4 col-md-2 sidebar">
+
+    <div style="padding: 20px;">
+        <div style="color: #333; margin: 10px 0 10px 0; font-weight: 700;">Housekeeping</div>
+        <div class="list-group">
+            <a href="/admin/dashboard" class="list-group-item list-group-item-action#if($page == 'dashboard') active #end"">Overview</a>
+            <a href="/" class="list-group-item list-group-item-action">Homepage</a>
+        </div>
+
+        <div style="color: #333; margin: 10px 0 10px 0; font-weight: 700;">Website</div>
+        <div class="list-group">
+            <a href="/admin/settings" class="list-group-item list-group-item-action#if($page == 'settings') active #end">Settings</a>
+            <a href="/admin/cache" class="list-group-item list-group-item-action#if($page == 'cache') active #end">Cache</a>
+            <a href="/admin/news" class="list-group-item list-group-item-action#if($page == 'news') active #end">News Articles</a>
+        </div>
+
+        <div style="color: #333; margin: 10px 0 10px 0; font-weight: 700;">Players</div>
+        <div class="list-group">
+            <a href="/admin/players" class="list-group-item list-group-item-action#if($page == 'players') active #end">Player Search</a>
+            <a href="#" class="list-group-item list-group-item-action">Player Bans</a>
+            <a href="#" class="list-group-item list-group-item-action">Player Chatlog</a>
+        </div>
+
+    </div>
+
+##
+
+##    <h4>Moderation</h4>
+##    <ul class="nav nav-sidebar">
+##        <li><a href="">IP Address Search</a></li>
+##        <li><a href="">Bans</a></li>
+##        <li><a href="">Chatlog</a></li>
+##    </ul>
+</div>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Comet-Server-Protocol" />
+        <module name="Comet-Game-Groups" />
+        <module name="Comet-Storage-MySQL" />
+        <module name="Comet-GameCenter-SnowStorm" />
+        <module name="Comet-StressTest" />
+        <module name="Comet-Website" />
+        <module name="Comet-Game-Items" />
+        <module name="Comet-CatalogTool" />
+        <module name="Comet-API-Example" />
+        <module name="Comet-Networking-API" />
+        <module name="Comet-Game-Achievements" />
+        <module name="Comet-Manager" />
+        <module name="Comet-Server" />
+        <module name="Comet-WebApp" />
+        <module name="Comet-Storage-API" />
+        <module name="Comet-GameCenter-FastFood" />
+        <module name="Comet-Common" />
+        <module name="Comet-API" />
+        <module name="Comet-Networking-Composers" />
+        <module name="Comet-Game-Rooms" />
+        <module name="Comet-ProcessManager" />
+        <module name="Comet-Launcher" />
+        <module name="Comet-Game-Catalog" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

@@ -1,0 +1,234 @@
+#parse('/templates/admin/base/header.vm')
+#set($page = 'players')
+
+<style>
+    input[type='text'] {
+        width: 60%;
+    }
+
+</style>
+
+<script>
+    $('#myTab a').click(function (e) {
+        e.preventDefault();
+        $(this).tab('show')
+    });
+
+    var playerStore = [];
+
+
+    $(document).ready(function () {
+        var playerTemplate = Handlebars.compile($('#player-template').html());
+
+        $('#playerUsername').on('input', function (e) {
+            if (e.target.value === '') {
+            } else {
+                var username = $('#playerUsername').val();
+                $('#usernameDisplay').html(username);
+
+                var formData = {
+                    'username': username //for get email
+                };
+
+                $.ajax({
+                    url: "/admin/players/search",
+                    type: "post",
+                    data: formData,
+                    success: function (d) {
+                        listPlayers(JSON.parse(d).players)
+                    }
+                });
+            }
+        });
+
+        function listPlayers(players) {
+            $('#playerList').empty();
+            playerStore = [];
+
+            for (var i = 0; i < players.length; i++) {
+                playerStore[players[i].id] = players[i];
+
+                $('#playerList').append(playerTemplate(players[i]))
+            }
+        }
+    });
+
+    function showInventory(playerId) {
+        //$('#playerInventory').clear()
+
+        // fetch inventory data
+        $.ajax({
+            url: "/admin/players/inventory",
+            type: "post",
+            data: { 'playerId': playerId },
+            success: function (d) {
+                console.log(d);
+            }
+        });
+    }
+
+    function showPasswordModal(playerId) {
+        var template = Handlebars.compile($('#player-password').html());
+
+        $('#modal-title').html("Change Password");
+        $('#modal-view').html(template({
+            id: playerId
+        }));
+
+        $('#modalWindow').modal();
+    }
+
+    function showModifyPlayer(playerId) {
+        var template = Handlebars.compile($('#player-modify').html());
+
+        $('#modal-title').html("Modify Player");
+        $('#modal-view').html(template({
+            player: playerStore[playerId]
+        }));
+
+        $('#modalWindow').modal();
+    }
+
+</script>
+
+<!-- Modal -->
+<div class="modal fade" id="modalWindow" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modal-title">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="modal-view">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script id="player-password" type="text/x-handlebars-template">
+    <form action="/admin/players/password/{{id}}" method="post">
+              <div class="form-group">
+                <label for="password" class="form-control-label">Password:</label>
+                <input type="password" name="password" class="form-control" id="password">
+              </div>
+              <div class="form-group">
+                <label for="message-text" class="form-control-label">Confirm Password:</label>
+                <input type="password" class="form-control" name="password-confirm" id="confirm-password"></textarea>
+              </div>
+
+              <div class="form-group">
+                <input type="submit" class="btn btn-secondary"  value="Save" />
+              </div>
+            </form>
+</script>
+
+<script id="player-modify" type="text/x-handlebars-template">
+    <form action="/admin/players/data/{{id}}" method="post">
+              <div class="form-group">
+                <label for="username" class="form-control-label">Username:</label>
+                <input type="text" name="username" class="form-control" id="username" value="{{player.username}}">
+              </div>
+
+              <div class="form-group">
+                <label for="figure" class="form-control-label">Figure:</label>
+                <input type="text" name="figure" class="form-control" id="figure" value="{{player.figure}}">
+              </div>
+
+              <div class="form-group">
+                <label for="rank" class="form-control-label">Rank:</label>
+                <input type="text" name="rank" class="form-control" id="rank" value="{{player.rank}}">
+              </div>
+
+              <div class="form-group">
+                <label for="credits" class="form-control-label">Credits:</label>
+                <input type="text" name="credits" class="form-control" id="credits" value="{{player.credits}}">
+              </div>
+
+              <div class="form-group">
+                <label for="vipPoints" class="form-control-label">VIP Points:</label>
+                <input type="text" name="vipPoints" class="form-control" id="vipPoints" value="{{player.vipPoints}}">
+              </div>
+
+              <div class="form-group">
+                <label for="activityPoints" class="form-control-label">Activity Points:</label>
+                <input type="text" name="activityPoints" class="form-control" id="activityPoints" value="{{player.activityPoints}}">
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="form-control-label">Email:</label>
+                <input type="text" name="activityPoints" class="form-control" id="email" value="{{player.email}}">
+              </div>
+
+              <div class="form-group">
+                <input type="submit" class="btn btn-secondary"  value="Save" />
+              </div>
+            </form>
+</script>
+
+
+<script id="player-template" type="text/x-handlebars-template">
+    <div class="list-group-item list-group-item-action flex-column align-items-start" style="min-height: 150px;">
+        <span style="width: 64px; height: 110px; position: absolute; left: 10px; right: 10px; background: url('https://www.habbo.nl/habbo-imaging/avatarimage?figure={{figure}}');"></span>
+
+        <div style="z-index: 100; margin-left: 64px;width: 200px; height: auto;float: right;">
+            <h5 class="mb-1">{{username}}</h5>
+            <small class="text-muted">Motto: <i>{{motto}}</i></small>
+            <br/>
+            <small class="text-muted">Credits: <i>{{credits}}</i></small>
+            <br/>
+            <small class="text-muted">Rank: <i>{{rank}}</i></small>
+            <br />
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-secondary" onclick="showPasswordModal({;{id}})">Password</button>
+                <button type="button" class="btn btn-secondary" onclick="showModifyPlayer({;{id}})">Modify</button>
+                <button type="button" class="btn btn-secondary" onclick="showInventory({;{id}})">Inventory</button>
+                <button type="button" class="btn btn-secondary">Chatlog</button>
+                <button type="button" class="btn btn-secondary">Bans</button>
+            </div>
+        </div>
+
+    </div>
+</script>
+
+<div class="container-fluid">
+    <div class="row">
+
+        #parse('/templates/admin/base/sidebar.vm')
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" style="padding: 20px;">
+        #if($error)
+            <div class="alert alert-danger">$error</div>
+        #end
+
+        #if($message)
+            <div class="alert alert-success">$message</div>
+        #end
+
+            <form>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="playerUsername" placeholder="Player Username">
+                    <small id="emailHelp" class="form-text text-muted">
+                        Start typing a username and it will be searched
+                        automatically!
+                    </small>
+                </div>
+            </form>
+
+            <div>
+                Showing results for <i><span id="usernameDisplay"></span></i>
+            </div>
+
+            <div style="margin-top: 10px;" class="list-group" id="playerList">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+#parse('/templates/admin/base/footer.vm')
