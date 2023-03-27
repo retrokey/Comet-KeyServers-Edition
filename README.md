@@ -1,4 +1,4 @@
-<img style='width=50px";height=50px'></img>
+<img style='width=50%;height=50%'></img>
 
 # Comet Server >> KeyServers Edition #
 
