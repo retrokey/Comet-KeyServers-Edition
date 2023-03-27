@@ -23,6 +23,13 @@ https://images-ext-2.discordapp.net/external/o5Dk7ZGKZnYLXamglZh0_dXZAxORHbbaEqD
 ## Can I Help!? ##
 Yeah just try to fix what you know and make a pull request if u can proof that the problem really is solved i will merge the pull request with no problem. <3
 
+## Features ##
+
+- Banner system
+- Battle Pass
+- Missions with Battle Pass
+- Etc...
+
 ## Making money ##
 I have no problem with developers making money through the sale of custom features, plugins or maintenance work.
 
