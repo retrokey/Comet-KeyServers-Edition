@@ -23,7 +23,7 @@ To install the internal you must register in your DNS the subdomain "int.domain.
 
 You will have to open the entire UI folder in a code editor like VS Code and change ALL the "int.lavvos.eu" links to "int.yourdomain.com", the rest is to configure nitro as usual, UI-Config, Renderer-Config, Etc....
 
-### Why this release ###
+## Why this release ##
 
 Since Compass (blop) and Outser decided to rip me off +100€ I've had a grudge against them, that's why I'm publishing this, this emulator comes with battle pass, missions for the battle pass, audios, gifs, emojis and a nitro UI (the same UI as Kubbo) AND a banner system implemented. During today I will be working on launching all the unusable Comet that was sold to me, it has several bugs, but it works correctly, one of the biggest bugs is the groups, but apart from that it has nothing more serious (regarding what I have seen and know). Use it as you want, if you want updates, nowadays I have no Java knowledge to continue this emulator, anyone who wants to work on it and exploit it to make money, is free to do it. I hope with this to give them a lesson to these two people that throughout their lives have been dedicated to sell dedicated servers and swindle this type of things, not having nobody that makes them face they have continued profiting of this type of things and for that reason I take these actions. I hope you enjoy the emulator and the few advantages it has.
 
