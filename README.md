@@ -1,6 +1,6 @@
 <img style='width=50px";height=50px'></img>
 
-# Comet Server >> KeyServers Edition#
+# Comet Server >> KeyServers Edition #
 
 KeyServers is as a fork of Comet by Dank074 (also compatible with nitro it comes with websockets). Comet is a high performance game server written in Java:
 
