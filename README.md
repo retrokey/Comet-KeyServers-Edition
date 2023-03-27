@@ -29,7 +29,7 @@ Since Compass (blop) and Outser decided to rip me off +100€ I've had a grudge 
 
 ## Screenshots ##
 
-<a href="https://imgur.com/a/Z29zE7D">Videos</a>
+<a href="https://imgur.com/a/Z29zE7D">Videos</a><br>
 <a href="https://imgur.com/a/fnh4TAC">Images</a>
 
 ## Can I Help!? ##
