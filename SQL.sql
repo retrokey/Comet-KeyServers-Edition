@@ -6193,3 +6193,463 @@ INSERT INTO `wordfilter_characters` (`character`, `replacement`) VALUES
 /*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;
+-- Dumping structure for table hylib.cms_alerts
+DROP TABLE IF EXISTS `cms_alerts`;
+CREATE TABLE IF NOT EXISTS `cms_alerts` (
+  `id` varchar(255) NOT NULL,
+  `alert` varchar(255) DEFAULT '',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 ROW_FORMAT=COMPACT;
+
+-- Dumping data for table hylib.cms_alerts: ~0 rows (approximately)
+DELETE FROM `cms_alerts`;
+/*!40000 ALTER TABLE `cms_alerts` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cms_alerts` ENABLE KEYS */;
+
+-- Dumping structure for table hylib.cms_catalog_categories
+DROP TABLE IF EXISTS `cms_catalog_categories`;
+CREATE TABLE IF NOT EXISTS `cms_catalog_categories` (
+  `id` int(250) NOT NULL AUTO_INCREMENT,
+  `name` varchar(250) NOT NULL,
+  `image` varchar(250) NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
+
+-- Dumping data for table hylib.cms_catalog_categories: ~2 rows (approximately)
+DELETE FROM `cms_catalog_categories`;
+/*!40000 ALTER TABLE `cms_catalog_categories` DISABLE KEYS */;
+INSERT INTO `cms_catalog_categories` (`id`, `name`, `image`) VALUES
+	(2, 'Rares', 'https://2.bp.blogspot.com/-rk8Ft_JC2C4/XZVaFikKf1I/AAAAAAABWaU/Jz2Vl56Cqts6bc0u08KlZvbepGeIGeJ5gCKgBGAsYHg/s1600/Icon117.png'),
+	(3, 'Megas', 'https://4.bp.blogspot.com/-RUg63sLQxcU/XZVaFmcweeI/AAAAAAABWaU/R8Pjn-AxMrkFH96giKNb2PCA4t3n2Q71QCKgBGAsYHg/s1600/Icon229.png');
+/*!40000 ALTER TABLE `cms_catalog_categories` ENABLE KEYS */;
+
+-- Dumping structure for table hylib.cms_catalog_items
+DROP TABLE IF EXISTS `cms_catalog_items`;
+CREATE TABLE IF NOT EXISTS `cms_catalog_items` (
+  `id` int(250) NOT NULL AUTO_INCREMENT,
+  `name` varchar(250) NOT NULL,
+  `image` varchar(250) NOT NULL,
+  `category` int(250) NOT NULL,
+  `price_diamonds` int(250) NOT NULL,
+  `price_th` int(250) NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
+
+-- Dumping data for table hylib.cms_catalog_items: ~8 rows (approximately)
+DELETE FROM `cms_catalog_items`;
+/*!40000 ALTER TABLE `cms_catalog_items` DISABLE KEYS */;
+INSERT INTO `cms_catalog_items` (`id`, `name`, `image`, `category`, `price_diamonds`, `price_th`) VALUES
+	(25, 'Throne', 'https://i.imgur.com/0etIpwi.png', 2, 100, 0),
+	(29, 'El CÃ©sped', 'https://i.imgur.com/vowWHBK.png', 2, 100, 0),
+	(30, 'Alfombra Lunar', 'https://i.imgur.com/IXP5KRF.png', 2, 100, 0),
+	(31, 'Fontana Gris', 'https://i.imgur.com/x0Q73kx.png', 2, 300, 0),
+	(33, 'Fontana Roja', 'https://i.ibb.co/nn531HF/1508261391.png', 2, 200, 0),
+	(34, 'DragÃ³n de fuego azul', 'https://catalogo.hobba.tv/img/furnis/mega_rares/dragon%20de%20fuego%20azul.gif', 2, 0, 6),
+	(36, 'Koala', 'https://catalogo.hobba.tv/img/furnis/raros/koala.gif', 2, 0, 3),
+	(37, 'Humareda Negra', 'https://catalogo.hobba.tv/img/furnis/raros/humareda%20negra.gif', 2, 0, 2);
+/*!40000 ALTER TABLE `cms_catalog_items` ENABLE KEYS */;
+
+-- Dumping structure for table hylib.cms_clients
+DROP TABLE IF EXISTS `cms_clients`;
+CREATE TABLE IF NOT EXISTS `cms_clients` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) DEFAULT NULL,
+  `version` enum('0','24','60') DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=158 DEFAULT CHARSET=latin1;
+
+-- Dumping data for table hylib.cms_clients: ~0 rows (approximately)
+DELETE FROM `cms_clients`;
+/*!40000 ALTER TABLE `cms_clients` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cms_clients` ENABLE KEYS */;
+
+-- Dumping structure for table hylib.cms_comments
+DROP TABLE IF EXISTS `cms_comments`;
+CREATE TABLE IF NOT EXISTS `cms_comments` (
+  `id` int(20) NOT NULL AUTO_INCREMENT,
+  `article_id` int(11) DEFAULT NULL,
+  `value` text DEFAULT NULL,
+  `author` int(11) DEFAULT NULL,
+  `timestamp` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Dumping data for table hylib.cms_comments: ~0 rows (approximately)
+DELETE FROM `cms_comments`;
+/*!40000 ALTER TABLE `cms_comments` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cms_comments` ENABLE KEYS */;
+
+-- Dumping structure for table hylib.cms_errands
+DROP TABLE IF EXISTS `cms_errands`;
+CREATE TABLE IF NOT EXISTS `cms_errands` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_from_id` varchar(11) DEFAULT NULL,
+  `user_to_id` varchar(11) DEFAULT NULL,
+  `data` int(11) DEFAULT NULL,
+  `value` text DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+-- Dumping data for table hylib.cms_errands: ~0 rows (approximately)
+DELETE FROM `cms_errands`;
+/*!40000 ALTER TABLE `cms_errands` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cms_errands` ENABLE KEYS */;
+
+-- Dumping structure for table hylib.cms_events
+DROP TABLE IF EXISTS `cms_events`;
+CREATE TABLE IF NOT EXISTS `cms_events` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(25) DEFAULT NULL,
+  `description` varchar(40) DEFAULT NULL,
+  `type` enum('atividade','evento') DEFAULT NULL,
+  `link` varchar(500) DEFAULT NULL,
+  `image` varchar(300) DEFAULT NULL,
+  `timestamp` int(11) DEFAULT NULL,
+  `timestamp_expire` int(11) DEFAULT NULL,
+  `room_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Dumping data for table hylib.cms_events: ~0 rows (approximately)
+DELETE FROM `cms_events`;
+/*!40000 ALTER TABLE `cms_events` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cms_events` ENABLE KEYS */;
+
+-- Dumping structure for table hylib.cms_forms
+DROP TABLE IF EXISTS `cms_forms`;
+CREATE TABLE IF NOT EXISTS `cms_forms` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `article_id` int(11) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `form` int(11) DEFAULT 0,
+  `usernames` text DEFAULT NULL,
+  `expire_timestamp` int(11) DEFAULT NULL,
+  `link` text DEFAULT NULL,
+  `message` text DEFAULT NULL,
+  `status` enum('enabled','disabled') DEFAULT 'disabled',
+  `form_code` text DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+-- Dumping data for table hylib.cms_forms: ~0 rows (approximately)
+DELETE FROM `cms_forms`;
+/*!40000 ALTER TABLE `cms_forms` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cms_forms` ENABLE KEYS */;
+
+-- Dumping structure for table hylib.cms_news
+DROP TABLE IF EXISTS `cms_news`;
+CREATE TABLE IF NOT EXISTS `cms_news` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) NOT NULL,
+  `image` varchar(100) NOT NULL DEFAULT '0',
+  `shortstory` text NOT NULL,
+  `longstory` text NOT NULL,
+  `author` varchar(100) NOT NULL DEFAULT 'Tom',
+  `date` int(11) NOT NULL DEFAULT 0,
+  `expire_timestamp` int(11) NOT NULL DEFAULT 0,
+  `form` int(11) NOT NULL DEFAULT 0,
+  `rascunho` enum('0','1') NOT NULL DEFAULT '0',
+  `comments` enum('enabled','disabled') NOT NULL DEFAULT 'enabled',
+  `type` varchar(100) NOT NULL DEFAULT '1',
+  `form_link` varchar(100) NOT NULL DEFAULT '1',
+  `roomid` varchar(100) NOT NULL DEFAULT '1',
+  `updated` enum('0','1') NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+-- Dumping data for table hylib.cms_news: ~0 rows (approximately)
+DELETE FROM `cms_news`;
+/*!40000 ALTER TABLE `cms_news` DISABLE KEYS */;
+INSERT INTO `cms_news` (`id`, `title`, `image`, `shortstory`, `longstory`, `author`, `date`, `expire_timestamp`, `form`, `rascunho`, `comments`, `type`, `form_link`, `roomid`, `updated`) VALUES
+	(2, 'Lavvos Level', 'https://i.imgur.com/8wueJCd.png', 'El renacimiento ha llegado y con el , una enorme calidad de servidor y eventos.', 'a', '1', 1672883320, 0, 1, '0', 'enabled', '1', '1', '1', '0');
+/*!40000 ALTER TABLE `cms_news` ENABLE KEYS */;
+
+-- Dumping structure for table hylib.cms_news_comments
+DROP TABLE IF EXISTS `cms_news_comments`;
+CREATE TABLE IF NOT EXISTS `cms_news_comments` (
+  `id` int(250) NOT NULL AUTO_INCREMENT,
+  `user_id` int(250) NOT NULL,
+  `notice_id` int(250) NOT NULL,
+  `comment` text COLLATE utf8mb4_spanish_ci NOT NULL,
+  `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci ROW_FORMAT=DYNAMIC;
+
+-- Dumping data for table hylib.cms_news_comments: ~0 rows (approximately)
+DELETE FROM `cms_news_comments`;
+/*!40000 ALTER TABLE `cms_news_comments` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cms_news_comments` ENABLE KEYS */;
+
+-- Dumping structure for table hylib.cms_news_like
+DROP TABLE IF EXISTS `cms_news_like`;
+CREATE TABLE IF NOT EXISTS `cms_news_like` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `userid` int(255) DEFAULT NULL,
+  `newsid` int(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Dumping data for table hylib.cms_news_like: ~0 rows (approximately)
+DELETE FROM `cms_news_like`;
+/*!40000 ALTER TABLE `cms_news_like` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cms_news_like` ENABLE KEYS */;
+
+-- Dumping structure for table hylib.cms_news_message
+DROP TABLE IF EXISTS `cms_news_message`;
+CREATE TABLE IF NOT EXISTS `cms_news_message` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `date` int(11) NOT NULL DEFAULT 0,
+  `buggid` int(11) DEFAULT NULL,
+  `userid` int(11) DEFAULT NULL,
+  `message` varchar(250) DEFAULT NULL,
+  `hash` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Dumping data for table hylib.cms_news_message: ~0 rows (approximately)
+DELETE FROM `cms_news_message`;
+/*!40000 ALTER TABLE `cms_news_message` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cms_news_message` ENABLE KEYS */;
+
+-- Dumping structure for table hylib.cms_panel_logs
+DROP TABLE IF EXISTS `cms_panel_logs`;
+CREATE TABLE IF NOT EXISTS `cms_panel_logs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `label` text DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5147 DEFAULT CHARSET=utf8mb3;
+
+-- Dumping data for table hylib.cms_panel_logs: ~12 rows (approximately)
+DELETE FROM `cms_panel_logs`;
+/*!40000 ALTER TABLE `cms_panel_logs` DISABLE KEYS */;
+INSERT INTO `cms_panel_logs` (`id`, `label`) VALUES
+	(5135, 'login;Key;1672988623;85.215.164.123;success'),
+	(5136, 'login;Key;1673323039;2a0c:5a80:1406:3800:d8de:7fab:80c3:51e8;success'),
+	(5137, 'login;Key;1673920055;2a0c:5a80:1011:9900:6c28:1699:69be:af1;success'),
+	(5138, 'pin-created;13;1673920130;2a0c:5a80:1011:9900:6c28:1699:69be:af1;success'),
+	(5139, 'login;Angelu;1673920148;187.161.189.195;success'),
+	(5140, 'update-own-rank;Angelu;1673920325;187.161.189.195;success'),
+	(5141, 'login;Angelu;1673978123;200.63.44.167;success'),
+	(5142, 'login;Angelu;1674002648;187.161.189.195;success'),
+	(5143, 'update-rank-user;byAngelu;to:Station;1674002688;187.161.189.195;success'),
+	(5144, 'login;Key;1674053356;2a0c:5a80:1011:9900:c1c5:bf7b:14fd:cdab;success'),
+	(5145, 'pin-created;13;1674053367;2a0c:5a80:1011:9900:c1c5:bf7b:14fd:cdab;success'),
+	(5146, 'login;Angelu;1674067461;200.63.45.8;success');
+/*!40000 ALTER TABLE `cms_panel_logs` ENABLE KEYS */;
+
+-- Dumping structure for table hylib.cms_post_comments
+DROP TABLE IF EXISTS `cms_post_comments`;
+CREATE TABLE IF NOT EXISTS `cms_post_comments` (
+  `id` int(20) NOT NULL AUTO_INCREMENT,
+  `type` enum('undefined','article','errand') NOT NULL DEFAULT 'undefined',
+  `post_id` int(11) DEFAULT 0,
+  `value` text DEFAULT NULL,
+  `author_id` int(11) DEFAULT 0,
+  `to_user_id` int(11) NOT NULL DEFAULT 0,
+  `timestamp` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+
+-- Dumping data for table hylib.cms_post_comments: ~5 rows (approximately)
+DELETE FROM `cms_post_comments`;
+/*!40000 ALTER TABLE `cms_post_comments` DISABLE KEYS */;
+INSERT INTO `cms_post_comments` (`id`, `type`, `post_id`, `value`, `author_id`, `to_user_id`, `timestamp`) VALUES
+	(7, 'article', 2, 'test', 1, 0, 0),
+	(8, 'article', 2, 'test2', 1, 0, 1672897115),
+	(9, 'article', 2, 'ola', 9, 0, 1672963053),
+	(10, 'article', 2, 'Holi', 5, 0, 1673046331),
+	(11, 'article', 2, 'a', 15, 0, 1673222743);
+/*!40000 ALTER TABLE `cms_post_comments` ENABLE KEYS */;
+
+-- Dumping structure for table hylib.cms_post_forms
+DROP TABLE IF EXISTS `cms_post_forms`;
+CREATE TABLE IF NOT EXISTS `cms_post_forms` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type` enum('undefined','article','radio') NOT NULL,
+  `post_id` int(11) DEFAULT 0,
+  `label` text DEFAULT NULL,
+  `user_id` int(11) DEFAULT 0,
+  `timestamp` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Dumping data for table hylib.cms_post_forms: ~0 rows (approximately)
+DELETE FROM `cms_post_forms`;
+/*!40000 ALTER TABLE `cms_post_forms` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cms_post_forms` ENABLE KEYS */;
+
+-- Dumping structure for table hylib.cms_post_reaction
+DROP TABLE IF EXISTS `cms_post_reaction`;
+CREATE TABLE IF NOT EXISTS `cms_post_reaction` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type` enum('undefined','article') NOT NULL DEFAULT 'undefined',
+  `post_id` int(11) DEFAULT 0,
+  `user_id` int(11) DEFAULT 0,
+  `state` enum('undefined','like','deslike') NOT NULL DEFAULT 'undefined',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
+
+-- Dumping data for table hylib.cms_post_reaction: ~3 rows (approximately)
+DELETE FROM `cms_post_reaction`;
+/*!40000 ALTER TABLE `cms_post_reaction` DISABLE KEYS */;
+INSERT INTO `cms_post_reaction` (`id`, `type`, `post_id`, `user_id`, `state`) VALUES
+	(18, 'article', 2, 1, 'like'),
+	(19, 'article', 2, 8, 'like'),
+	(20, 'article', 2, 5, 'undefined');
+/*!40000 ALTER TABLE `cms_post_reaction` ENABLE KEYS */;
+
+-- Dumping structure for table hylib.cms_profile_comments
+DROP TABLE IF EXISTS `cms_profile_comments`;
+CREATE TABLE IF NOT EXISTS `cms_profile_comments` (
+  `id` int(250) NOT NULL AUTO_INCREMENT,
+  `profile_id` int(250) NOT NULL,
+  `user_id` int(250) NOT NULL,
+  `comment` text COLLATE utf8mb4_spanish_ci NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci ROW_FORMAT=DYNAMIC;
+
+-- Dumping data for table hylib.cms_profile_comments: ~0 rows (approximately)
+DELETE FROM `cms_profile_comments`;
+/*!40000 ALTER TABLE `cms_profile_comments` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cms_profile_comments` ENABLE KEYS */;
+
+-- Dumping structure for table hylib.cms_profile_posts
+DROP TABLE IF EXISTS `cms_profile_posts`;
+CREATE TABLE IF NOT EXISTS `cms_profile_posts` (
+  `id` int(250) NOT NULL AUTO_INCREMENT,
+  `user_id` int(250) NOT NULL,
+  `post` text COLLATE utf8mb4_spanish_ci NOT NULL,
+  `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci ROW_FORMAT=DYNAMIC;
+
+-- Dumping data for table hylib.cms_profile_posts: ~0 rows (approximately)
+DELETE FROM `cms_profile_posts`;
+/*!40000 ALTER TABLE `cms_profile_posts` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cms_profile_posts` ENABLE KEYS */;
+
+-- Dumping structure for table hylib.cms_rarevalues
+DROP TABLE IF EXISTS `cms_rarevalues`;
+CREATE TABLE IF NOT EXISTS `cms_rarevalues` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `item_name` varchar(25) DEFAULT '',
+  `item_image` varchar(30) DEFAULT '',
+  `item_cost` int(11) DEFAULT 0,
+  `item_status` enum('up','down','same') DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+-- Dumping data for table hylib.cms_rarevalues: ~0 rows (approximately)
+DELETE FROM `cms_rarevalues`;
+/*!40000 ALTER TABLE `cms_rarevalues` DISABLE KEYS */;
+INSERT INTO `cms_rarevalues` (`id`, `item_name`, `item_image`, `item_cost`, `item_status`) VALUES
+	(1, 'Drako Rosa', '', 15, 'same');
+/*!40000 ALTER TABLE `cms_rarevalues` ENABLE KEYS */;
+
+-- Dumping structure for table hylib.cms_reactions
+DROP TABLE IF EXISTS `cms_reactions`;
+CREATE TABLE IF NOT EXISTS `cms_reactions` (
+  `id` int(20) NOT NULL AUTO_INCREMENT,
+  `article_id` int(11) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `state` enum('0','1','2') NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Dumping data for table hylib.cms_reactions: ~0 rows (approximately)
+DELETE FROM `cms_reactions`;
+/*!40000 ALTER TABLE `cms_reactions` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cms_reactions` ENABLE KEYS */;
+
+-- Dumping structure for table hylib.cms_referred
+DROP TABLE IF EXISTS `cms_referred`;
+CREATE TABLE IF NOT EXISTS `cms_referred` (
+  `id` int(250) NOT NULL AUTO_INCREMENT,
+  `user_id` int(250) NOT NULL,
+  `referred_id` int(250) NOT NULL,
+  `referred_ip` varchar(100) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci ROW_FORMAT=DYNAMIC;
+
+-- Dumping data for table hylib.cms_referred: ~0 rows (approximately)
+DELETE FROM `cms_referred`;
+/*!40000 ALTER TABLE `cms_referred` DISABLE KEYS */;
+INSERT INTO `cms_referred` (`id`, `user_id`, `referred_id`, `referred_ip`, `timestamp`) VALUES
+	(1, 1, 154, '77.225.129.82', '2021-12-12 05:25:00');
+/*!40000 ALTER TABLE `cms_referred` ENABLE KEYS */;
+
+-- Dumping structure for table hylib.cms_settings
+DROP TABLE IF EXISTS `cms_settings`;
+CREATE TABLE IF NOT EXISTS `cms_settings` (
+  `id` int(6) NOT NULL AUTO_INCREMENT,
+  `hotelname` varchar(255) NOT NULL DEFAULT 'Habbo',
+  `site` varchar(255) NOT NULL DEFAULT 'http://localhost/',
+  `host` varchar(30) DEFAULT NULL,
+  `port` int(10) DEFAULT NULL,
+  `external_variables` text DEFAULT NULL,
+  `external_override_variables` text DEFAULT NULL,
+  `external_flash_texts` text DEFAULT NULL,
+  `external_flash_override_texts` text DEFAULT NULL,
+  `figuredata` text DEFAULT NULL,
+  `figuremap` text DEFAULT NULL,
+  `furnidata` text DEFAULT NULL,
+  `flash_client_url` text DEFAULT NULL,
+  `productdata` text DEFAULT NULL,
+  `avatarimage` varchar(255) NOT NULL DEFAULT 'http://www.habbo.fr/habbo-imaging/',
+  `maintenance` set('enabled','disabled') NOT NULL DEFAULT 'disabled',
+  `facebook` text NOT NULL,
+  `twitter` text NOT NULL,
+  `discord` text NOT NULL,
+  `application` text DEFAULT NULL,
+  `recaptcha` varchar(255) NOT NULL,
+  `credits` varchar(255) NOT NULL DEFAULT '5000',
+  `diamonds` int(11) NOT NULL DEFAULT 0,
+  `duckets` int(11) NOT NULL DEFAULT 0,
+  `motto` text DEFAULT NULL,
+  `rank` int(11) NOT NULL DEFAULT 1,
+  `figure` varchar(300) DEFAULT NULL,
+  `cms_name` text DEFAULT NULL,
+  `cms_version` text DEFAULT NULL,
+  `cms_developers` text DEFAULT NULL,
+  `force_room` enum('0','1') NOT NULL DEFAULT '0',
+  `force_room_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+-- Dumping data for table hylib.cms_settings: 1 rows
+DELETE FROM `cms_settings`;
+/*!40000 ALTER TABLE `cms_settings` DISABLE KEYS */;
+INSERT INTO `cms_settings` (`id`, `hotelname`, `site`, `host`, `port`, `external_variables`, `external_override_variables`, `external_flash_texts`, `external_flash_override_texts`, `figuredata`, `figuremap`, `furnidata`, `flash_client_url`, `productdata`, `avatarimage`, `maintenance`, `facebook`, `twitter`, `discord`, `application`, `recaptcha`, `credits`, `diamonds`, `duckets`, `motto`, `rank`, `figure`, `cms_name`, `cms_version`, `cms_developers`, `force_room`, `force_room_id`) VALUES
+	(1, 'Lavvos', 'https://lavvos.eu', '85.215.164.123', 30000, 'https://lavvos.eu/swfs/gamedata/external_variable.txt', 'https://lavvos.eu/swfs/gamedata/external_override_variables.txt', 'https://lavvos.eu/swfs/gamedata/external_flash_texts.txt', 'https://lavvos.eu/swfs/gamedata/external_flash_override_texts.txt', 'https://lavvos.eu/swfs/gamedata/figuredata.xml', 'https://lavvos.eu/swfs/gamedata/figuremap.xml', 'https://lavvos.eu/swfs/gamedata/furnidata.xml', '', 'https://lavvos.eu/swfs/gamedata/productdata.txt', 'https://habbo-imaging.lavvos.eu/?', 'enabled', 'https://www.facebook.com/oHabboPTBR', 'https://twitter.com/', 'https://discord.gg/mVQJGU9', '', '', '10000', 0, 0, 'Lavvos.us', 1, 'ea-990000128-153640-153640.wa-990000069-94-85.ch-877-81-1408.hd-180-1.ha-990000132-63-153640.he-990000148-153640.sh-987462842-81.ca-990000126-153640-153640.fa-990000146-153640.hr-990000131-39-158639.lg-275-81.cc-987462858-153638', 'Hylib', '0.0.3', 'Wake, Laxus e Dut', '0', 21);
+/*!40000 ALTER TABLE `cms_settings` ENABLE KEYS */;
+
+-- Dumping structure for table hylib.cms_tweets
+DROP TABLE IF EXISTS `cms_tweets`;
+CREATE TABLE IF NOT EXISTS `cms_tweets` (
+  `id` int(250) NOT NULL AUTO_INCREMENT,
+  `user_id` int(250) NOT NULL,
+  `tweet` varchar(250) NOT NULL,
+  `date` int(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+
+-- Dumping data for table hylib.cms_tweets: ~0 rows (approximately)
+DELETE FROM `cms_tweets`;
+/*!40000 ALTER TABLE `cms_tweets` DISABLE KEYS */;
+INSERT INTO `cms_tweets` (`id`, `user_id`, `tweet`, `date`) VALUES
+	(1, 2, 'xdddd', 1672455749);
+/*!40000 ALTER TABLE `cms_tweets` ENABLE KEYS */;
+
+-- Dumping structure for table hylib.cms_wordfilter
+DROP TABLE IF EXISTS `cms_wordfilter`;
+CREATE TABLE IF NOT EXISTS `cms_wordfilter` (
+  `word` text DEFAULT NULL,
+  `replacement` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Dumping data for table hylib.cms_wordfilter: ~0 rows (approximately)
+DELETE FROM `cms_wordfilter`;
+/*!40000 ALTER TABLE `cms_wordfilter` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cms_wordfilter` ENABLE KEYS */;
