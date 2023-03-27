@@ -13,7 +13,7 @@ KeyServers is as a fork of Comet by Dank074 (also compatible with nitro it comes
 
 ## Installation ##
 
-This emulator comes with a Nitro interface (UI) and an internal folder.
+This emulator comes with a Nitro interface (UI) and an Internal folder follow this little tutorial for getting all working:
 
 * ### Internal Installation <a href="https://github.com/retrokey/KeyServers-Internal">(Click here to download the Intenal)</a> ###
 
@@ -27,8 +27,9 @@ You will have to open the entire UI folder in a code editor like VS Code and cha
 
 Since Compass (blop) and Outser decided to rip me off +100€ I've had a grudge against them, that's why I'm publishing this, this emulator comes with battle pass, missions for the battle pass, audios, gifs, emojis and a nitro UI (the same UI as Kubbo) AND a banner system implemented. During today I will be working on launching all the unusable Comet that was sold to me, it has several bugs, but it works correctly, one of the biggest bugs is the groups, but apart from that it has nothing more serious (regarding what I have seen and know). Use it as you want, if you want updates, nowadays I have no Java knowledge to continue this emulator, anyone who wants to work on it and exploit it to make money, is free to do it. I hope with this to give them a lesson to these two people that throughout their lives have been dedicated to sell dedicated servers and swindle this type of things, not having nobody that makes them face they have continued profiting of this type of things and for that reason I take these actions. I hope you enjoy the emulator and the few advantages it has.
 
-https://cdn.discordapp.com/attachments/1060697117070463006/1061708143383560384/bandicam_2023-01-08_19-06-58-817.mp4
-https://images-ext-2.discordapp.net/external/o5Dk7ZGKZnYLXamglZh0_dXZAxORHbbaEqDkRnQcJMo/https/i.imgur.com/RpNqKuz.mp4
+[![image](https://cdn.discordapp.com/attachments/1060697117070463006/1061708143383560384/bandicam_2023-01-08_19-06-58-817.mp4)](https://github.com/retrokey/Emulador/releases)
+[![image](https://images-ext-2.discordapp.net/external/o5Dk7ZGKZnYLXamglZh0_dXZAxORHbbaEqDkRnQcJMo/https/i.imgur.com/RpNqKuz.mp4)](https://github.com/retrokey/Emulador/releases)
+
 
 
 ## Can I Help!? ##
