@@ -1,4 +1,4 @@
-![](http://i.imgur.com/Pu05U2K.png)
+<img style='width=50px";height=50px'></img>
 
 Comet Server
 ---
