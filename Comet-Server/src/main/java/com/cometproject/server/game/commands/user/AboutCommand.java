@@ -43,6 +43,7 @@ public class AboutCommand extends ChatCommand {
 
         about.append("¶ Desarrolladores principales:\n");
         about.append("µ Key.\n");
+        about.append("All Comet developers for all of his work, including in special Custom wich was the one who made most of this emulator.");
         about.append("Agradecimientos especiales al equipo de Comet y al equipo de Nitro, ya que el hotel usa sus bases.\n\n");
         about.append("Record de usuarios en linea: " + GameCycle.getInstance().getOnlineRecord() + "\n");
 
