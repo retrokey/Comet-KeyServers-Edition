@@ -1,4 +1,4 @@
-<img style='width=50%;height=50%'></img>
+<img src="https://camo.githubusercontent.com/b0162b0848e573ce14f4b51f35dfd69f5128976f1c26fb3bca94cce8286ed4cf/687474703a2f2f692e696d6775722e636f6d2f5075303555324b2e706e67" style='width=50%;height=50%'></img>
 
 # Comet Server >> KeyServers Edition #
 
