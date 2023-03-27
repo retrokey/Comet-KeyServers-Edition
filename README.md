@@ -15,7 +15,7 @@ KeyServers is as a fork of Comet by Dank074 (also compatible with nitro it comes
 
 This emulator comes with a Nitro interface (UI) and an internal folder.
 
-* ### Internal Installation ###
+* ### Internal Installation ### <a href="https://github.com/retrokey/KeyServers-Internal">(Click here to download the intenal)</a>
 
 To install the internal you must register in your DNS the subdomain "int.domain.com" it is mandatory that it is the prefix "int", after this you must configure a page in your IIS with the subdomain INT and the directory must be the folder "Internal". You must configure the Rcon.php file with your database account details.
 
