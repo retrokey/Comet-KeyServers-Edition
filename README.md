@@ -6,9 +6,9 @@ Comet Server
 Comet is a high performance game server written in Java.
 
  
-# Arcturus Morningstar #
+# Comet Server #
 
-KeyServers is as a fork of Comet by Dank074 (also compatible with nitro it comes with websockets):
+KeyServers is as a fork of Comet by Dank074 (also compatible with nitro it comes with websockets). Comet is a high performance game server written in Java:
 
 
 
@@ -16,10 +16,6 @@ KeyServers is as a fork of Comet by Dank074 (also compatible with nitro it comes
 
 ## Download ##
 [![image](https://img.shields.io/badge/STABLE%20RELEASES-0.0.1-success.svg?style=for-the-badge&logo=appveyor)](https://github.com/retrokey/Emulador/releases)
-
-[![image](https://img.shields.io/badge/DEVELOPER%20BUILDS-4.0-red.svg?style=for-the-badge&logo=appveyor)](https://git.krews.org/morningstar/Arcturus-Community/-/jobs) *
-
-[![image](https://img.shields.io/badge/RECOMMENDED%20PLUGINS-blue.svg?style=for-the-badge&logo=)](https://git.krews.org/morningstar/archive) 
 
 ###### * Note to use these builds you will need to run any database updates from [here] (https://git.krews.org/morningstar/Arcturus-Community/-/tree/dev/sqlupdates) #######
 
