@@ -26,7 +26,7 @@ public class AboutCommand extends ChatCommand {
         boolean aboutDetailed = client.getPlayer().getPermissions().getRank().aboutDetailed();
 
         about.append("<center><img src='%about_image%' /></center>\n".replace("%about_image%", CometSettings.aboutImg));
-        about.append("<center>%hotelName% es un hotel creado por SkyServers. Todos los derechos reservados a sus respectivos autores.</center>\n\n".replace("%hotelName%", CometSettings.hotelName));
+        about.append("<center>%hotelName% es un hotel creado por KeyServers. Todos los derechos reservados a sus respectivos autores.</center>\n\n".replace("%hotelName%", CometSettings.hotelName));
 
         if (CometSettings.aboutShowRoomsActive || CometSettings.aboutShowUptime || aboutDetailed) {
             about.append("<b>Estadísticas del hotel:</b>\n");
@@ -42,8 +42,7 @@ public class AboutCommand extends ChatCommand {
         }
 
         about.append("¶ Desarrolladores principales:\n");
-        about.append("µ Compass.\n");
-        about.append("µ Laux.\n\n");
+        about.append("µ Key.\n");
         about.append("Agradecimientos especiales al equipo de Comet y al equipo de Nitro, ya que el hotel usa sus bases.\n\n");
         about.append("Record de usuarios en linea: " + GameCycle.getInstance().getOnlineRecord() + "\n");
 
