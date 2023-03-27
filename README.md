@@ -4,7 +4,7 @@ KeyServers is as a fork of Comet by Dank074 (also compatible with nitro it comes
 
 
 
-[![image](https://img.shields.io/discord/557240155040251905?style=for-the-badge&logo=discord&color=7289DA&label=KREWS&logoColor=fff)](https://discord.gg/BzfFsTp)
+[![image](https://img.shields.io/discord/557240155040251905?style=for-the-badge&logo=discord&color=7289DA&label=KREWS&logoColor=fff)](https://cometproject.net/)
 
 ## Download ##
 [![image](https://img.shields.io/badge/STABLE%20RELEASES-0.0.1-success.svg?style=for-the-badge&logo=appveyor)](https://github.com/retrokey/Emulador/releases)
